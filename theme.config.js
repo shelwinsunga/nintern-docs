@@ -64,4 +64,5 @@ export default {
   footerEditLink: '',
   footerText: <>Nintern {new Date().getFullYear()}</>,
   unstable_faviconGlyph: '👋',
+  unstable_staticImage: true
 }
