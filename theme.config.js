@@ -1,5 +1,5 @@
 export default {
-  github: 'https://github.com/shelwinsunga',
+  github: 'https://github.com/shelwinsunga/nintern-docs',
   docsRepositoryBase: 'https://github.com/shelwinsunga/nintern-docs',
   titleSuffix: ' – Nextra',
   logo: (
