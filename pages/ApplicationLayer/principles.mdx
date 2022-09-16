@@ -10,3 +10,36 @@ It would seem that the overwhelming complexity of the internet would make develo
 
 When thinking about building an application, there are two styles that describe how the pieces of the app are going to work with each other. The first is the **client-server** paradigm, and the second is the **peer-to-peer** paradigm. 
 
+## Client-server paradigm
+
+**Server:**
+- Always-on host
+- Permanent IP address
+- Often in data centers, for scaling 
+
+
+**Clients:**
+
+- Contacts and communicates the server
+- Maybe intermittenly connected to the internet
+- Won't have a permanent IP address
+- Clients do not communicate with each other directly
+
+
+## Peer-to-peer paradigm
+
+- No server, instead we have peers
+- End systems communicate with each other
+- Peers request service from other peers, and provide service for other peers.
+- A good example is file sharing
+    - Self Scalability: new peers bring new service capacity, as well as new service demands.
+- Peers are intermittenly connected to the internet and change IP addresses.
+
+## Process communication
+
+If two processes communicate with each other within the same host, we call it *inter-process communication* (defined by OS). Otherwise, if the communication is between different devices, we would call it **messages**.
+
+## Sockets
+
+Sockets are analogous to a door. We send messages to and from the door. 
+
