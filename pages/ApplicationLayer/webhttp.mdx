@@ -36,12 +36,48 @@ In a non-persistent HTTP connection, a TCP connection is opened and at most one 
 
 ![HTTPres](../../public/HTTPDia2.png)
 
+<br/>
+
+In this annotated example, we see that the Client starts off with a request to have a TCP connection at port 80. The server is waiting for a TCP connection, and will receive it. It accepts the request, and then notifies the client.
+
+The client requests an object that contains the url, and this goes into the TCP connection socket. The server will receive the message, and then the server sends the object (containing the html file) into the TCP connection socket for the client. Thus ending the TCP connection.
+
+This process will recursively occur until all the images are found. 
+
+## Non-persistent HTTP response time
+
 
 <br/>
 
+![RTT](../../public/RTT.png)
+
+<br/>
+
+
+Let's define **RTT** (round trip time) as the time it takes for a small packet to travel from the client to the server and back. 
+We would say that the non-persistent HTTP response time is **2RTT + file transmission time**.
+
 ### Persistent HTTP
 
+
+There are a few issues with non-persistent HTTP. 
+
+- Requires 2 RTTs per object
+- OS overhead for each TCP connection
+- Browsers often open multiple parallel TCP connections to fetch referenced objects in parallel.
+
+
 In a persistent HTTP connection, a TCP connection is opened and multiple objects can be sent over this single TCP connection. Afterwards, the TCP connection closes.
+
+This means:
+
+- The server leaves a connection open after sending response
+- Subsequent HTTP messages between same server/client sent over open connection
+- Client sends requests as soon as it encounters a referenced object
+- One RTT for all the referenced objects
+
+
+
 
 
 
