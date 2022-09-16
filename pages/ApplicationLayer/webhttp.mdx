@@ -18,3 +18,31 @@ Take for instance a PC running Firefox. The client (Firefox) will send a kind HT
 ![HTTPres](../../public/HTTPDia.png)
 
 <br />
+
+HTTP uses the transport services provided by the **TCP** protocol. The client will open a TCP connection to a web server (creating a socket) using port 80. The server accepts the TCP connection, the client and server will exchange messages, and then the TCP connection will close.
+
+HTTP is a *stateless* protocol. This means that it doesn't have any information about past client requests. There's a single request, and a single response. You might wonder why it's stateless, and its because of its simplicity. Protocols that have to think of states will be more complex - needing to think about cleanup in the 
+case that the transaction fails.
+
+## HTTP connections: two types
+
+### Non-persistent HTTP
+
+In a non-persistent HTTP connection, a TCP connection is opened and at most one object is sent over the TCP connection. Then, it closes. This means that downloading multiple objects requires multiple TCP connections.
+
+### Example 
+
+<br/>
+
+![HTTPres](../../public/HTTPDia2.png)
+
+
+<br/>
+
+### Persistent HTTP
+
+In a persistent HTTP connection, a TCP connection is opened and multiple objects can be sent over this single TCP connection. Afterwards, the TCP connection closes.
+
+
+
+
