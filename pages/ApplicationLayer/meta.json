@@ -1,5 +1,8 @@
 {
     "layencap": "Layering, Encapsulation",
+    "principles": "Principles of the Application Layer",
     "webhttp": "The Web and HTTP",
-    "email": "Email"
+    "email": "Email",
+    "dns":"DNS",
+    "dhcp": "DHCP"
 }
