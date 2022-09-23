@@ -4,5 +4,6 @@
     "webhttp": "The Web and HTTP",
     "email": "Email",
     "dns":"DNS",
-    "dhcp": "DHCP"
+    "dhcp": "DHCP",
+    "ssh": "SSH"
 }
